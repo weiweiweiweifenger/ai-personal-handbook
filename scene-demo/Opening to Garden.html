@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8090df" />
+    <title>自由地创造，清晰地协作</title>
+    <link rel="stylesheet" href="scene-demo.css" />
+  </head>
+  <body>
+    <audio id="bgm" loop preload="auto">
+      <source src="assets/lovely-garden-kawaiiwork.mp3" type="audio/mpeg" />
+    </audio>
+    <button class="music-toggle" id="music-toggle" type="button" aria-pressed="true" aria-label="暂停背景音乐" title="暂停背景音乐">
+      <span class="music-mark" aria-hidden="true">II</span>
+      <span class="music-label">BGM ON</span>
+    </button>
+    <main class="experience" aria-live="polite">
+      <section class="loader" id="loader" aria-label="正在加载说明书">
+        <div class="loader-copy">
+          <p class="loader-kicker">北辰青年项目团队 · 第8组</p>
+          <h2>自由地创造，<br />清晰地协作</h2>
+          <p class="loader-status">正在翻开第一章：卧室</p>
+          <div class="loader-progress" role="progressbar" aria-label="页面加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span></span>
+          </div>
+          <p class="loader-percent"><span id="loader-percent">0</span>%</p>
+        </div>
+        <div class="loader-window" aria-hidden="true">
+          <img src="assets/bedroom.png" alt="" />
+          <span class="loader-orb"></span>
+          <span class="loader-tab tab-one"></span>
+          <span class="loader-tab tab-two"></span>
+        </div>
+        <div class="loader-shelf" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+      </section>
+
+      <section class="scene bedroom is-active" id="bedroom" aria-label="第一章：卧室">
+        <img class="scene-art" src="assets/bedroom.png" alt="蓝色卧室中摆着书、镜子、绿植和一颗橘子" />
+        <div class="motion-motifs bedroom-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy bedroom-copy">
+          <p class="chapter-mark">01 / 开场定位</p>
+          <h1>自由地创造，<br />清晰地协作</h1>
+          <p class="subtitle">第8组雷威 · AI 时代个人说明书</p>
+          <div class="identity-lines">
+            <p><strong>雷威</strong> · 东华大学 · 软件工程 · 大四</p>
+            <p>我最想保留的身份，是一个自由的人。</p>
+            <p class="quiet-line">理解我适合做什么，如何协作，以及压力下怎样稳定交付。</p>
+          </div>
+        </div>
+
+        <button class="orange-trigger" id="orange-trigger" type="button" aria-label="剥开橘子，进入花园">
+          <span class="orange-orb" aria-hidden="true"></span>
+          <span class="orange-peel peel-one" aria-hidden="true"></span>
+          <span class="orange-peel peel-two" aria-hidden="true"></span>
+          <span class="orange-peel peel-three" aria-hidden="true"></span>
+          <span class="orange-leaf" aria-hidden="true"></span>
+          <span class="orange-arrow" aria-hidden="true"></span>
+          <span class="orange-hint">剥个橘子</span>
+        </button>
+      </section>
+
+      <section class="scene garden" id="garden" aria-label="第二章：花园" aria-hidden="true">
+        <img class="scene-art" src="assets/garden.png" alt="花园中有花朵、书、石柱和露珠" />
+        <div class="motion-motifs garden-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy garden-copy">
+          <p class="chapter-mark">02 / 为什么加入北辰青年</p>
+          <h2>把模糊的需要，<br />养成可运行的方案。</h2>
+          <p class="garden-intro">这个夏天，我想更理解 Agent 协作与 AI 产品，也想和团队一起完成一段能写进简历的端到端实践。</p>
+        </div>
+
+        <div class="flower-cluster" aria-label="打开花朵查看项目动机与经验">
+          <button class="story-flower flower-main" type="button" data-story="reason" aria-expanded="false" aria-controls="flower-story">
+            <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="petal p5"></span><span class="flower-core"></span>
+            <span class="sr-only">打开加入项目的原因</span>
+          </button>
+          <button class="story-flower flower-small flower-a" type="button" data-story="projects" aria-expanded="false" aria-controls="flower-story">
+            <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="petal p5"></span><span class="flower-core"></span>
+            <span class="sr-only">打开已有实践</span>
+          </button>
+          <button class="story-flower flower-small flower-b" type="button" data-story="future" aria-expanded="false" aria-controls="flower-story">
+            <span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="petal p5"></span><span class="flower-core"></span>
+            <span class="sr-only">打开期待的成果</span>
+          </button>
+        </div>
+
+        <aside class="flower-story" id="flower-story" aria-live="polite">
+          <button class="close-story" type="button" aria-label="收起花朵信息">×</button>
+          <p class="story-label"></p>
+          <h3></h3>
+          <div class="story-body"></div>
+        </aside>
+        <button class="dew-trigger" id="dew-trigger" type="button" aria-label="穿过露珠，进入图书馆"><span></span><b>轻触</b></button>
+      </section>
+
+      <section class="scene library" id="library" aria-label="第三章：图书馆" aria-hidden="true">
+        <img class="scene-art" src="assets/library.png" alt="摆着书堆、镜子、索引卡和台灯的图书馆" />
+        <div class="motion-motifs library-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy library-copy">
+          <p class="chapter-mark">03 / 任务系统</p>
+          <h2>把任务说清楚，<br />才值得开始。</h2>
+          <p class="library-intro">我擅长把复杂问题拆成能执行的步骤。清晰的目标、优先级和交付标准，会让我把精力放在真正的推进上。</p>
+        </div>
+        <div class="index-cluster" aria-label="打开索引卡查看任务系统">
+          <button class="index-card card-a" type="button" data-index="strengths" aria-expanded="false"><span>我能做什么</span></button>
+          <button class="index-card card-b" type="button" data-index="start" aria-expanded="false"><span>开始之前</span></button>
+          <button class="index-card card-c" type="button" data-index="blockers" aria-expanded="false"><span>容易卡住</span></button>
+        </div>
+        <aside class="library-note" id="library-note" aria-live="polite">
+          <button class="close-library-note" type="button" aria-label="收起索引卡信息">×</button>
+          <p class="library-note-label"></p><h3></h3><div class="library-note-body"></div>
+        </aside>
+        <button class="led-trigger" id="led-trigger" type="button" aria-label="穿过镜面，进入工作室"><span>穿过镜面</span></button>
+      </section>
+
+      <section class="scene studio" id="studio" aria-label="第四章：工作室" aria-hidden="true">
+        <img class="scene-art" src="assets/studio.png" alt="摆着电脑、台灯、信封和便签的工作室" />
+        <div class="motion-motifs studio-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy studio-copy">
+          <p class="chapter-mark">04 / 沟通系统</p>
+          <h2>信息集中，<br />反馈才会可执行。</h2>
+          <p class="studio-intro">我会在关键依赖、问题和进度上主动同步。好的沟通不是增加消息，而是让每个人知道下一步该做什么。</p>
+        </div>
+        <div class="signal-cluster" aria-label="打开便签查看沟通方式">
+          <button class="signal-note signal-a" type="button" data-signal="brief">任务怎么给</button>
+          <button class="signal-note signal-b" type="button" data-signal="sync">如何同步</button>
+          <button class="signal-note signal-c" type="button" data-signal="feedback">怎样反馈</button>
+        </div>
+        <aside class="studio-note" id="studio-note" aria-live="polite"><button class="close-studio-note" type="button" aria-label="收起便签信息">×</button><p class="studio-note-label"></p><h3></h3><div class="studio-note-body"></div></aside>
+        <button class="computer-trigger" id="computer-trigger" type="button" aria-label="打开电脑，进入云上教室"><span>打开屏幕</span></button>
+      </section>
+
+      <section class="scene cloud-classroom" id="cloud-classroom" aria-label="第五章：云上教室" aria-hidden="true">
+        <img class="scene-art" src="assets/cloud-classroom.png" alt="云朵包围的空中教室，有白板、便签和放映机" />
+        <div class="motion-motifs cloud-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy cloud-copy"><p class="chapter-mark">05 / 反馈系统</p><h2>具体的反馈，<br />才能带来下一步。</h2><p class="cloud-intro">我欢迎直接的意见，但希望它能说明原因、方向和标准。这样反馈不是评价，而是共同推进。</p></div>
+        <div class="feedback-cluster" aria-label="打开便签查看反馈偏好"><button class="feedback-note note-a" data-feedback="positive">好的部分</button><button class="feedback-note note-b" data-feedback="issues">需要改什么</button><button class="feedback-note note-c" data-feedback="after">收到之后</button></div>
+        <aside class="feedback-panel" id="feedback-panel" aria-live="polite"><button class="close-feedback" type="button" aria-label="收起反馈说明">×</button><p class="feedback-label"></p><h3></h3><div class="feedback-body"></div></aside>
+        <button class="cloud-trigger" id="cloud-trigger" type="button" aria-label="穿越云层，进入行星温室"><em aria-hidden="true"></em><span>穿越云层</span></button>
+      </section>
+
+      <section class="scene planet-greenhouse" id="planet-greenhouse" aria-label="第六章：行星温室" aria-hidden="true">
+        <img class="scene-art" src="assets/planet-greenhouse.png" alt="玻璃温室中有植物、行星和标本罐" />
+        <div class="motion-motifs greenhouse-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy greenhouse-copy"><p class="chapter-mark">06 / 压力与支持</p><h2>把压力拆小，<br />让支持及时到场。</h2><p class="greenhouse-intro">压力来时，我需要的不是更多催促，而是更清楚的优先级、可执行的小步和及时的支持。</p></div>
+        <div class="planet-cluster" aria-label="打开行星标签查看压力与支持"><button class="support-planet planet-a" data-support="reset">先恢复节奏</button><button class="support-planet planet-b" data-support="info">需要的信息</button><button class="support-planet planet-c" data-support="resources">可用资源</button></div>
+        <aside class="support-panel" id="support-panel" aria-live="polite"><button class="close-support" type="button" aria-label="收起支持说明">×</button><p class="support-label"></p><h3></h3><div class="support-body"></div></aside>
+        <button class="greenhouse-flower-trigger" id="greenhouse-flower-trigger" type="button" aria-label="点亮台灯，进入宇宙花园"><span>LIGHT UP</span></button>
+      </section>
+
+      <section class="scene cosmic-garden" id="cosmic-garden" aria-label="第七章：宇宙花园" aria-hidden="true">
+        <img class="scene-art" src="assets/cosmic-garden.png" alt="宇宙中的花园，有巨型花朵、书信、植物和行星" />
+        <div class="motion-motifs cosmic-motifs" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="scene-copy cosmic-copy"><p class="chapter-mark">07 / 团队协作说明</p><h2>一起把想法，<br />种成真正的作品。</h2><p class="cosmic-intro">我适合拆解问题、AI 辅助开发、PPT 结构和 Agent MVP。给我清晰标准、及时反馈与集中信息，我会把想法持续推进到可交付。</p></div>
+        <div class="letter-cluster" aria-label="打开星际信笺查看协作说明"><button class="space-letter letter-a" data-letter="fit">适合的工作</button><button class="space-letter letter-b" data-letter="needs">协作需要</button><button class="space-letter letter-c" data-letter="promise">给团队的话</button></div>
+        <aside class="cosmic-letter-panel" id="cosmic-letter-panel" aria-live="polite"><button class="close-cosmic-letter" type="button" aria-label="收起星际信笺">×</button><p class="cosmic-letter-label"></p><h3></h3><div class="cosmic-letter-body"></div></aside>
+        <button class="ending-trigger" id="ending-trigger" type="button" aria-label="合上说明书"><span>合上说明书</span></button>
+        <div class="book-close-wash" aria-hidden="true"><i></i><b></b></div>
+        <div class="ending-scene" aria-hidden="true"></div>
+        <div class="ending-copy" id="ending-copy" aria-live="polite">
+          <p class="ending-kicker">第8组雷威 · AI 时代个人说明书</p>
+          <h2>愿我们留下的<br />不只是完成。</h2>
+          <p>还有一段值得记住的共同创作。</p>
+          <button class="restart-story" id="restart-story" type="button" aria-label="重新打开说明书">重新打开</button>
+        </div>
+      </section>
+
+      <div class="orange-wash" id="orange-wash" aria-hidden="true"></div>
+      <div class="dew-wash" id="dew-wash" aria-hidden="true"></div>
+      <div class="led-wash" id="led-wash" aria-hidden="true"></div>
+      <div class="screen-wash" aria-hidden="true"></div>
+      <div class="cloud-wash" aria-hidden="true"></div>
+      <div class="flower-wash" aria-hidden="true"></div>
+    </main>
+    <script src="scene-demo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+# Local visual QA outputs
+scene-demo/*-check.png
+scene-demo/*-final.png
+scene-demo/*-feedback-check.png
+scene-demo/book-close-check.png
+scene-demo/bgm-control-check.png
+scene-demo/cloud-arrow-check.png
+scene-demo/greenhouse-planet-check.png
+scene-demo/identity-readability-check.png
+scene-demo/interstellar-desk-check.png
+scene-demo/mirror-entry-check.png
+scene-demo/mirror-label-check.png
+scene-demo/orange-arrow-check.png
+scene-demo/orange-arrow-final.png
